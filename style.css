@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        
+        body { 
+            font-family: 'Nunito', sans-serif;
+            text-align: center; 
+            margin: 0;
+            background: #2c2c2c; 
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            background: url('1.jpg') no-repeat center center/cover;
+            position: relative;
+            padding:20px;
+            overflow: hidden;
+        }
+
+        /* Centered Card */
+        .container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+            width: 90%;
+            max-width: 500px;
+            color: black;
+            position: relative;
+            
+        }
+
+        /* Headings */
+        h2, h3 {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+
+        /* Inputs & Button */
+        input, textarea { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        button { 
+            width: 100%;
+            padding: 12px;
+            cursor: pointer; 
+            background: #007bff; 
+            color: white; 
+            font-size: 1.1em;
+            border: none; 
+            border-radius: 5px; 
+            transition: 0.3s;
+            font-weight: bold;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        button:hover { background: #0056b3; }
+
+        /* Results Section (Morph Effect) */
+        #results { 
+            margin-top: 20px;
+            font-size: 1.2em;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            border-radius: 10px;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.5s ease, transform 0.5s ease, padding 0.5s ease;
+            font-family: 'Nunito', sans-serif;
+            min-height: 150px; /* Ensures space for results */
+            text-align: left;
+       
+        }
+
+        #results.active {
+            opacity: 1;
+            transform: scale(1);
+            padding: 15px;
+        }
+
+        #results p {
+            margin: 2px 0; /* Reduce spacing between results */
+            font-size: 1.1em;
+            font-weight: bold;
+            border-bottom: 2px solid rgb(152, 39, 39); /* Adds an underline */
+            padding-bottom: 2px;
+        }    
+
+        .symbol { font-size: 2em; color: #007bff; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+
+        /* Floating Mathematical Symbols Animation */
+        @keyframes moveSymbols {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.4; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        .symbol-animation {
+            position: absolute;
+            font-size: 2.5em;
+            opacity: 0.3;
+            color: #f0f0ee;
+            animation: moveSymbols linear infinite;
+            z-index: 1;
+        }
